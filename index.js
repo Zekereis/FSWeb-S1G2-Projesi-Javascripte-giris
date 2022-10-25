@@ -19,7 +19,9 @@ Aşağıdakileri yapın:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
+var surucuYasi = 20;
+if (surucuYasi > 18) { console.log("true"); }
+else { console.log("false"); }
 
 
 /*
@@ -34,6 +36,9 @@ Aşağıdakileri yapınız:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+var birinciDeger = 6;
+var ikinciDeger = 5;
+if (birinciDeger == ikinciDeger) { console.log(birinciDeger); }
 
 
 
@@ -49,7 +54,9 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
-
+var sayı = "1999";
+sayı.toString();
+console.log(sayı);
 
 
 /*
@@ -61,10 +68,10 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function carpma(a, b) {
+  return a * b;
 }
-
+console.log(carpma(4, 2));
 
 
 
@@ -77,11 +84,13 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+
+
+function kopeginYasi(insaninYasi) {
+  return insaninYasi * 7;
 }
 
-
+console.log(kopeginYasi(2));
 
 /* Görev 3 */
 
@@ -104,9 +113,41 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+function oyunHamle(oyuncu) {
+  let bilgisayarRound = Math.random() * 1;
+  let bilgisayar;
+  if (0.30 > bilgisayarRound) {
+    bilgisayar = "Taş";
+  }
+  else if (bilgisayarRound >= 0.30 && bilgisayarRound < 0.70) {
+    bilgisayar = "Kağıt";
+  }
+  else {
+    bilgisayar = "Makas";
+  }
+  return oyun(oyuncu, bilgisayar);
 }
+
+function oyun(oyuncu, bilgisayar) {
+  let oyunSonuc;
+  let t = "Taş";
+  let m = "Makas";
+  let k = "Kağıt";
+  if (oyuncu == bilgisayar) {
+    oyunSonuc = "Beraberlik";
+  }
+  else if ((oyuncu == t && bilgisayar == m) || (oyuncu == k && bilgisayar == t) || (oyuncu == m && bilgisayar == k)) {
+    oyunSonuc = "Kazandın!";
+  }
+  else {
+    oyunSonuc = "Kaybettin!";
+  }
+  console.log(bilgisayar);
+  return oyunSonuc;
+}
+
+  console.log(oyunHamle("Taş"));
+
 
 
 
@@ -120,9 +161,10 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(km) {
+  return km * 0.62137;
 }
+console.log(milDonusturucu(3));
 
 
 
@@ -134,9 +176,11 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(cm) {
+  return cm * 30.48;
 }
+
+console.log(feetDonusturucu(5))
 
 
 
@@ -153,9 +197,19 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(maymun) {
+  var metin = 
+  " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
+
+  for (var i = maymun;i>0;i--){
+    console.log(i+metin);
+  }
+  return maymun + metin ;
 }
+console.log(cocukSarkisi(5));
+
+
+
 
 
 /* Görev 6 : Not Hesaplayıcı */
@@ -173,9 +227,16 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(sonuc) {
+  let notText;
+  if (sonuc >= 90 && sonuc <= 100) { notText = "A aldın"; }
+  else if (sonuc >= 80 && sonuc < 90) { notText = "B aldın"; }
+  else if (sonuc >= 70 && sonuc < 80) { notText = "C aldın"; }
+  else if (sonuc >= 60 && sonuc < 70) { notText = "D aldın"; }
+  else { notText = "F aldın"; }
+  return notText;
 }
+console.log(notHesapla(80));
 
 
 
@@ -198,7 +259,7 @@ function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
 
 
 /* Lütfen bu satırın alt tarafını değiştirmeyin */
-function sa(){
+function sa() {
   console.log('Kodlar çalışıyor');
   return 'as';
 }
