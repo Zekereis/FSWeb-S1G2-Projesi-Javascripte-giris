@@ -162,7 +162,7 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 */
 
 function milDonusturucu(km) {
-  return km * 0.62137;
+  return km * 0.621371;
 }
 console.log(milDonusturucu(3));
 
@@ -177,10 +177,10 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 */
 
 function feetDonusturucu(cm) {
-  return cm * 30.48;
+  return cm / 30.48;
 }
 
-console.log(feetDonusturucu(5))
+console.log(feetDonusturucu(2))
 
 
 
